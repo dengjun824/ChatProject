@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/application.css" rel="stylesheet" />
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../angularjs/angular_1.2.17.js" type="text/javascript"></script>
+    <script src="../angularjs/login.js" type="text/javascript"></script>
+    <script src="../js/spin.js" type="text/javascript"></script>
+    <script src="../js/main.js" type="text/javascript"></script>
+</head>
+<body ng-app="loginApp">
+    <div style="margin-top: 100px;">
+    </div>
+    <div ng-controller="loginController">
+        <form name="loginrForm" class="form-horizontal col-sm-offset-4 col-sm-4" role="form" ng-submit="loginrForm.$valid && postLogin()" novalidate>
+            <!---->
+            <div class="form-group">
+                <label for="User Account" class="col-sm-4 control-label">User Account</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="userAccount" placeholder="Enter the Account" ng-model="login.account" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Password" class="col-sm-4 control-label">Password</label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter the Password" ng-model="login.password" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary col-sm-offset-4 col-sm-4">
+                    Login
+                </button>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-default col-sm-offset-4 col-sm-4" ng-click="goRegister()">
+                    Register
+                </button>
+            </div>
+            <div class="alert alert-danger" ng-show="handlingTip.isVisible">{{handlingTip.message}}</div>
+        </form>
+    </div>
+</body>
+</html>

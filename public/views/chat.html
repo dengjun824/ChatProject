@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/application.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/socket.io.js" type="text/javascript"></script>
+    <script src="../angularjs/angular_1.2.17.js" type="text/javascript"></script>
+    <script src="../angularjs/angular-socket.js" type="text/javascript"></script>
+    <script src="../angularjs/chat.js" type="text/javascript"></script>
+    <script src="../js/spin.js" type="text/javascript"></script>
+    <script src="../js/main.js" type="text/javascript"></script>
+</head>
+<body ng-app="chatApp">
+    <div ng-controller="chatController">
+        <div id="chatContent">
+
+        </div>
+        <form class="form-horizontal" role="form">
+            <input type="hidden" id="userAccount" value="<%= userAccount %>"/>
+            <div class="form-group">
+                <textarea class="form-control" rows="3" required placeholder="Post a Message"
+                    maxlength="200" ng-model="chatMessage"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary col-sm-offset-11 col-sm-1" ng-click="postChatMes();">
+                    Send
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

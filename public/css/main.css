@@ -1,0 +1,83 @@
+﻿#ChatTitle {
+    padding: 10px 0;
+}
+
+#hp_logo {
+    padding: 0px 5px 0 10px;
+}
+
+    #hp_logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+#ChatTitle {
+    font-family: HP Simplified Bold;
+    Font-size: 32px;
+    font-weight: bolder;
+    Line-height: 32px;
+    color: #000000;
+    vertical-align: middle;
+}
+
+    #ChatTitle span {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+#indexNav {
+    margin-top: 20px;
+    border-bottom: solid #CFCFCF 1px;
+}
+
+    #indexNav li {
+        margin-left: 20px;
+    }
+
+#index_content {
+    width: 100%;
+    /*height: 800px;*/
+    /*position: inherit;*/
+    margin-top: 20px;
+}
+
+#iframe_content {
+    width: 100%;
+    /*height: 100%;*/
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+.myRow {
+    margin: 10px 0;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #CDC8B1;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #CDC8B1;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.comments {
+    background: #CDC8B1;
+}
+
+#chatContent {
+    max-height: 400px;
+    overflow-y: auto;
+}

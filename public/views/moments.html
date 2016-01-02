@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/application.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/socket.io.js" type="text/javascript"></script>
+    <script src="../angularjs/angular_1.2.17.js" type="text/javascript"></script>
+    <script src="../angularjs/angular-socket.js" type="text/javascript"></script>
+    <script src="../angularjs/moments.js" type="text/javascript"></script>
+    <script src="../js/spin.js" type="text/javascript"></script>
+    <script src="../js/main.js" type="text/javascript"></script>
+</head>
+<body ng-app="momentsApp">
+    <div ng-controller="momentsController">
+        <div ng-repeat="moment in content.data">
+            <div class="row myRow">
+                <div class="col-sm-12"><em style="color: #00868B">{{moment.author}}</em> express a writting</div>
+            </div>
+            <div class="row myRow">
+                <div class="col-sm-12"><strong>{{moment.content}}</strong></div>
+            </div>
+            <div class="row myRow">
+                <div class="col-sm-11">
+                    {{moment.postDate | date:'yyyy-MM-dd HH:mm:ss'}}
+                </div>
+                <button type="button" class="btn btn-default btn-xs col-sm-1" data-toggle="modal" ng-click="openComments(moment)">
+                    <span class="glyphicon glyphicon-share"></span>Reply
+                </button>
+            </div>
+            <div class="row myRow" ng-show="moment.comments.length > 0">
+                <div class="arrow-up" ng-click="toggle(moment._id)" id="{{moment._id}}"></div>
+                <div ng-repeat="comment in moment.comments" class="comments collapse" ng-click="toggle()">
+                    <em style="color: #00868B; margin-left:5px;">{{comment.from}}</em>
+                    <span style="margin: 0 5px;"> reply: {{comment.comment}}</span>
+                </div>
+            </div>
+            <div class="row myRow" style="border-bottom: #DAA520 1px solid">
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Comment {{comments.title}}'s writting</h4>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control" rows="4" ng-model="comments.content"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="postComments()">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.comments').collapse('show');
+    </script>
+</body>
+</html>

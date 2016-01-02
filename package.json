@@ -1,0 +1,18 @@
+{
+	"name": "Chat",
+	"version": "0.0.0",
+	"description": "Chat",
+	"main": "app.js",
+	"author": {
+		"name": "lihaoq",
+		"email": ""
+	},
+	"dependencies": {
+		"socket.io": "~1.0.0",
+		"mime": "~1.2.7",
+		"edge": "*",
+		"mongojs": "*",
+		"querystring": "0.2.0",
+		"MD5": "1.2.1"
+	}
+}
